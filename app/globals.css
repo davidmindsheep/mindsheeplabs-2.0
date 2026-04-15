@@ -115,7 +115,7 @@ p { font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem); color: #cbd5e1; }
 
 /* Top branding — fades out on scroll */
 .top-branding {
-  padding: 2rem 0 1rem;
+  padding: 2.5rem 0 1.5rem;
   text-align: center;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -124,6 +124,22 @@ p { font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem); color: #cbd5e1; }
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
+}
+
+.top-branding-text {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.nav-brand-text {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
 }
 
 /* Buttons */

@@ -98,28 +98,14 @@ export default function Home() {
 
       {/* Top Branding — disappears on scroll */}
       <div className="top-branding">
-        <Image
-          src="/MINDSHEEP LOGO.svg"
-          alt="Mindsheep Labs"
-          width={360}
-          height={100}
-          className="object-contain"
-          priority
-        />
+        <span className="top-branding-text">mindsheep labs</span>
       </div>
 
       {/* Navigation — slides in on scroll */}
       <nav className="glass-nav">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2" style={{ height: '60px' }}>
-            <Image
-              src="/MINDSHEEP LOGO.svg"
-              alt="Mindsheep Labs Logo"
-              width={180}
-              height={50}
-              className="object-contain h-full w-auto"
-              priority
-            />
+            <span className="nav-brand-text">mindsheep labs</span>
           </div>
           <div className="flex items-center gap-8">
             <a href="/services" data-nav="services" className="nav-link text-sm font-semibold tracking-wide hover:text-primary transition-colors">Services</a>
@@ -179,7 +165,6 @@ export default function Home() {
             </svg>
           </div>
         </section>
-        </div>
 
         {/* ==================== RESULTS + CLIENT LOGOS ==================== */}
         <section className="container pt-8 pb-16 reveal">
@@ -239,6 +224,8 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        </div>
 
         {/* ==================== SERVICES ==================== */}
         <section id="services" className="section-alt py-20 reveal">

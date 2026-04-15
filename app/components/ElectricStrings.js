@@ -199,8 +199,10 @@ export default function ElectricStrings() {
       draw();
     }
 
+    const parent = canvas.parentElement;
+
     const handleMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
+      const rect = parent.getBoundingClientRect();
       last_mouse.x = mouse.x;
       last_mouse.y = mouse.y;
       mouse.x = e.clientX - rect.left;
@@ -213,12 +215,12 @@ export default function ElectricStrings() {
     };
 
     const handleResize = () => {
-      w = canvas.width = canvas.parentElement.offsetWidth;
-      h = canvas.height = canvas.parentElement.offsetHeight;
+      w = canvas.width = parent.offsetWidth;
+      h = canvas.height = parent.offsetHeight;
     };
 
-    canvas.addEventListener("mousemove", handleMouseMove);
-    canvas.addEventListener("mouseleave", handleMouseLeave);
+    parent.addEventListener("mousemove", handleMouseMove);
+    parent.addEventListener("mouseleave", handleMouseLeave);
     window.addEventListener("resize", handleResize);
 
     loop();
@@ -226,8 +228,8 @@ export default function ElectricStrings() {
     return () => {
       running = false;
       cancelAnimationFrame(animId);
-      canvas.removeEventListener("mousemove", handleMouseMove);
-      canvas.removeEventListener("mouseleave", handleMouseLeave);
+      parent.removeEventListener("mousemove", handleMouseMove);
+      parent.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -242,6 +244,7 @@ export default function ElectricStrings() {
         width: "100%",
         height: "100%",
         zIndex: 0,
+        pointerEvents: "none",
       }}
     />
   );
