@@ -1,9 +1,37 @@
 "use client";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ElectricStrings from "./components/ElectricStrings";
 
 export default function Home() {
+  const [formStatus, setFormStatus] = useState('idle'); // idle | sending | sent | error
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setFormStatus('sending');
+    const form = e.target;
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      business: form.business.value,
+      budget: form.budget.value,
+    };
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setFormStatus('sent');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch {
+      setFormStatus('error');
+    }
+  }
 
   useEffect(() => {
     const nav = document.querySelector('.glass-nav');
@@ -431,7 +459,14 @@ export default function Home() {
             <p className="max-w-xl mx-auto" style={{fontSize: '1.05rem'}}>Tell us about your business and we&apos;ll come back with a clear plan — no obligation, no fluff.</p>
           </div>
           <div className="glass-panel p-10 md:p-16 max-w-2xl mx-auto contact-panel">
-            <form className="flex flex-col gap-6" action="#contact" method="POST">
+            {formStatus === 'sent' ? (
+              <div className="text-center py-8">
+                <h3 className="text-2xl mb-4 text-primary">Message sent!</h3>
+                <p className="text-gray-300">Thanks for reaching out. We&apos;ll get back to you within 24 hours.</p>
+                <button onClick={() => setFormStatus('idle')} className="btn btn-secondary mt-6">Send another message</button>
+              </div>
+            ) : (
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="text-sm font-semibold text-gray-300">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name" className="form-input" required />
@@ -454,8 +489,14 @@ export default function Home() {
                   <option value="50k+">$50,000+</option>
                 </select>
               </div>
-              <button type="submit" className="btn btn-primary" style={{width: '100%', textAlign: 'center', padding: '1rem'}}>Send Message</button>
+              <button type="submit" className="btn btn-primary" style={{width: '100%', textAlign: 'center', padding: '1rem'}} disabled={formStatus === 'sending'}>
+                {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
+              </button>
+              {formStatus === 'error' && (
+                <p className="text-center text-red-400 text-sm">Something went wrong. Please try again.</p>
+              )}
             </form>
+            )}
           </div>
           </div>
         </section>
