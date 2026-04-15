@@ -95,12 +95,12 @@ export default function Home() {
       {/* Navigation */}
       <nav className="glass-nav">
         <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2" style={{ height: '60px' }}>
+          <div className="flex items-center gap-2" style={{ height: '120px' }}>
             <Image
               src="/MINDSHEEP LOGO.svg"
               alt="Mindsheep Labs Logo"
-              width={180}
-              height={50}
+              width={360}
+              height={100}
               className="object-contain h-full w-auto"
               priority
             />
@@ -115,7 +115,7 @@ export default function Home() {
 
       <main>
         {/* ==================== HERO ==================== */}
-        <section className="container pt-16 pb-8 flex flex-col items-center justify-center text-center animate-fade-in relative">
+        <section className="container pt-40 pb-8 flex flex-col items-center justify-center text-center animate-fade-in relative">
 
           {/* Hero glow accent behind logo */}
           <div className="hero-glow-accent"></div>
@@ -177,7 +177,7 @@ export default function Home() {
         {/* ==================== RESULTS + CLIENT LOGOS ==================== */}
         <section className="container pt-8 pb-16 reveal">
           <p className="text-center text-sm text-gray-500 mb-10 uppercase tracking-wide font-semibold">Real results for real businesses</p>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="stat-block">
               <div className="stat-logo-wrap">
                 <Image src="/clients/aldott-homes.webp" alt="Aldott Homes" width={140} height={42} className="client-logo stat-client-logo" />
@@ -199,12 +199,21 @@ export default function Home() {
               <div className="stat-number" data-target="2.09">2.09x</div>
               <div className="stat-label">Increase in leads with costs reduced by 30.5% in 3 months</div>
             </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 text-center mt-8 max-w-2xl mx-auto">
             <div className="stat-block">
               <div className="stat-logo-wrap">
                 <Image src="/clients/westcoast-hifi.svg" alt="WestCoast Hifi" width={160} height={42} className="client-logo stat-client-logo" />
               </div>
               <div className="stat-number" data-target="40">40%</div>
               <div className="stat-label">Website speed increase and improved performance</div>
+            </div>
+            <div className="stat-block">
+              <div className="stat-logo-wrap">
+                <Image src="/clients/progressive-audio.png" alt="Progressive Car Sound" width={160} height={42} className="client-logo stat-client-logo" />
+              </div>
+              <div className="stat-number" data-target="3.5">$3.5K</div>
+              <div className="stat-label">Revenue generated in just 6 weeks from a brand new campaign</div>
             </div>
           </div>
         </section>
