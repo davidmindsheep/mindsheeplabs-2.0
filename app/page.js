@@ -7,6 +7,7 @@ export default function Home() {
   useEffect(() => {
     const nav = document.querySelector('.glass-nav');
     const scrollIndicator = document.querySelector('.scroll-indicator');
+    const topBranding = document.querySelector('.top-branding');
     if (!nav) return;
 
     const navThreshold = 80;
@@ -17,11 +18,13 @@ export default function Home() {
     }, 1500);
 
     const handleScroll = () => {
-      // Nav visibility
+      // Nav visibility + top branding fade
       if (window.scrollY > navThreshold) {
         nav.classList.add('nav-visible');
+        if (topBranding) topBranding.classList.add('branding-hidden');
       } else {
         nav.classList.remove('nav-visible');
+        if (topBranding) topBranding.classList.remove('branding-hidden');
       }
 
       // Fade out scroll indicator once user scrolls
@@ -92,15 +95,27 @@ export default function Home() {
       {/* Background Glow */}
       <div className="bg-glow"></div>
 
-      {/* Navigation */}
+      {/* Top Branding — disappears on scroll */}
+      <div className="top-branding">
+        <Image
+          src="/MINDSHEEP LOGO.svg"
+          alt="Mindsheep Labs"
+          width={360}
+          height={100}
+          className="object-contain"
+          priority
+        />
+      </div>
+
+      {/* Navigation — slides in on scroll */}
       <nav className="glass-nav">
         <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2" style={{ height: '120px' }}>
+          <div className="flex items-center gap-2" style={{ height: '60px' }}>
             <Image
               src="/MINDSHEEP LOGO.svg"
               alt="Mindsheep Labs Logo"
-              width={360}
-              height={100}
+              width={180}
+              height={50}
               className="object-contain h-full w-auto"
               priority
             />
@@ -115,7 +130,7 @@ export default function Home() {
 
       <main>
         {/* ==================== HERO ==================== */}
-        <section className="container pt-40 pb-8 flex flex-col items-center justify-center text-center animate-fade-in relative">
+        <section className="container pt-4 pb-8 flex flex-col items-center justify-center text-center animate-fade-in relative">
 
           {/* Hero glow accent behind logo */}
           <div className="hero-glow-accent"></div>
@@ -210,7 +225,7 @@ export default function Home() {
             </div>
             <div className="stat-block">
               <div className="stat-logo-wrap">
-                <Image src="/clients/progressive-audio.png" alt="Progressive Car Sound" width={160} height={42} className="client-logo stat-client-logo" />
+                <Image src="/clients/progressive-audio.png" alt="Progressive Car Sound" width={160} height={42} className="client-logo client-logo-nofilter stat-client-logo" />
               </div>
               <div className="stat-number" data-target="3.5">$3.5K</div>
               <div className="stat-label">Revenue generated in just 6 weeks from a brand new campaign</div>
