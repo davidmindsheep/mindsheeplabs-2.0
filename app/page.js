@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect } from "react";
+import ElectricStrings from "./components/ElectricStrings";
 
 export default function Home() {
 
@@ -130,19 +131,9 @@ export default function Home() {
 
       <main>
         {/* ==================== HERO ==================== */}
-        <section className="container pt-4 pb-8 flex flex-col items-center justify-center text-center animate-fade-in relative">
-
-          {/* Hero glow accent behind logo */}
-          <div className="hero-glow-accent"></div>
-
-          {/* Floating particles */}
-          <div className="hero-particles">
-            <div className="particle particle-1"></div>
-            <div className="particle particle-2"></div>
-            <div className="particle particle-3"></div>
-            <div className="particle particle-4"></div>
-            <div className="particle particle-5"></div>
-          </div>
+        <div className="hero-canvas-wrap" style={{ position: 'relative', overflow: 'hidden' }}>
+          <ElectricStrings />
+        <section className="container pt-4 pb-8 flex flex-col items-center justify-center text-center animate-fade-in relative" style={{ position: 'relative', zIndex: 1 }}>
 
           {/* Breathing Logo Transition */}
           <div className="logo-morph-container mb-8">
@@ -188,6 +179,7 @@ export default function Home() {
             </svg>
           </div>
         </section>
+        </div>
 
         {/* ==================== RESULTS + CLIENT LOGOS ==================== */}
         <section className="container pt-8 pb-16 reveal">
