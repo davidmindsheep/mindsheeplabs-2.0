@@ -2,9 +2,18 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const brandMap = {
+  "mindsheep.com.au": "Mindsheep Labs Australia",
+  "www.mindsheep.com.au": "Mindsheep Labs Australia",
+  "mindsheeplabs.com": "Mindsheep Labs Global",
+  "www.mindsheeplabs.com": "Mindsheep Labs Global",
+};
+
 export async function POST(req) {
   try {
     const { name, email, business, budget } = await req.json();
+    const host = req.headers.get("host") || "mindsheep.com.au";
+    const brandName = brandMap[host] || "Mindsheep Labs";
 
     if (!name || !email || !business) {
       return Response.json(
@@ -15,17 +24,17 @@ export async function POST(req) {
 
     const budgetLabels = {
       under5k: "Under $5,000",
-      "5k-15k": "$5,000 – $15,000",
-      "15k-50k": "$15,000 – $50,000",
+      "5k-15k": "$5,000 \u2013 $15,000",
+      "15k-50k": "$15,000 \u2013 $50,000",
       "50k+": "$50,000+",
     };
 
     const { data, error } = await resend.emails.send({
-      from: "Mindsheep Labs <david@mindsheep.com.au>",
+      from: `${brandName} <david@mindsheep.com.au>`,
       to: ["david@mindsheep.com.au"],
-      subject: `New Lead: ${name} — Mindsheep Labs`,
+      subject: `New Lead: ${name} \u2014 ${brandName}`,
       html: `
-        <h2>New enquiry from mindsheeplabs.com</h2>
+        <h2>New enquiry from ${host}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
         <p><strong>Business:</strong></p>

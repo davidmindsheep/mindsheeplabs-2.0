@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import useBrand from "../hooks/useBrand";
 
 export default function Footer() {
+  const brand = useBrand();
   return (
     <footer className="site-footer">
       <div className="container">
@@ -9,12 +12,12 @@ export default function Footer() {
           <div className="footer-brand">
             <Image
               src="/MINDSHEEP LOGO.svg"
-              alt="Mindsheep Labs"
+              alt={brand.nameCaps}
               width={140}
               height={40}
               className="footer-logo"
             />
-            <p className="footer-tagline">AI-powered marketing that moves faster than your competition.</p>
+            <p className="footer-tagline">{brand.tagline}</p>
           </div>
           <div className="footer-links">
             <div className="footer-link-group">
@@ -31,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Mindsheep Labs Global. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {brand.legal}. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

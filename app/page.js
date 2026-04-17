@@ -2,8 +2,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ElectricStrings from "./components/ElectricStrings";
+import useBrand from "./hooks/useBrand";
 
 export default function Home() {
+  const brand = useBrand();
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | sent | error
 
   async function handleSubmit(e) {
@@ -126,14 +128,14 @@ export default function Home() {
 
       {/* Top Branding — disappears on scroll */}
       <div className="top-branding">
-        <span className="top-branding-text">mindsheep labs</span>
+        <span className="top-branding-text">{brand.name}</span>
       </div>
 
       {/* Navigation — slides in on scroll */}
       <nav className="glass-nav">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2" style={{ height: '60px' }}>
-            <span className="nav-brand-text">mindsheep labs</span>
+            <span className="nav-brand-text">{brand.name}</span>
           </div>
           <div className="flex items-center gap-8">
             <a href="/services" data-nav="services" className="nav-link text-sm font-semibold tracking-wide hover:text-primary transition-colors">Services</a>
@@ -247,7 +249,7 @@ export default function Home() {
               But neither speaks the other's language — and that gap is where your budget goes to die.
             </p>
             <p className="text-lg text-center mb-0 max-w-3xl mx-auto text-gray-300 mt-6" style={{lineHeight: '1.8'}}>
-              Mindsheep Labs was born in the trenches of Google Ads and SEO, then rebuilt from the ground up around AI.
+              {brand.nameCaps} was born in the trenches of Google Ads and SEO, then rebuilt from the ground up around AI.
               We don't bolt AI onto old processes. <strong>We build custom tools that make every dollar in your funnel work harder</strong> — from audience targeting to creative generation to real-time bid optimisation.
             </p>
           </div>
@@ -441,10 +443,10 @@ export default function Home() {
                 <h2 className="mb-2">Meet the <span className="text-gradient">Founder</span></h2>
                 <h3 className="text-gray-400 mb-6" style={{fontWeight: 400}}>David — Founder & Strategist</h3>
                 <p className="text-gray-300 mb-4" style={{lineHeight: '1.8'}}>
-                  Mindsheep Labs started with a simple frustration: why do marketing agencies and AI companies operate in completely separate worlds? David spent years deep in Google Ads, SEO, and B2B lead generation before going all-in on AI — not as a buzzword, but as the backbone of how campaigns get built, optimised, and scaled.
+                  {brand.nameCaps} started with a simple frustration: why do marketing agencies and AI companies operate in completely separate worlds? David spent years deep in Google Ads, SEO, and B2B lead generation before going all-in on AI — not as a buzzword, but as the backbone of how campaigns get built, optimised, and scaled.
                 </p>
                 <p className="text-gray-300" style={{lineHeight: '1.8'}}>
-                  Today, the Mindsheep team combines hands-on marketing specialists with AI engineers who build the custom tools that give our clients an edge. We&apos;re not a 200-person agency. We&apos;re a tight crew that moves fast, builds smart, and treats your ad spend like it&apos;s our own.
+                  Today, the {brand.nameCaps} team combines hands-on marketing specialists with AI engineers who build the custom tools that give our clients an edge. We&apos;re not a 200-person agency. We&apos;re a tight crew that moves fast, builds smart, and treats your ad spend like it&apos;s our own.
                 </p>
               </div>
             </div>
@@ -515,7 +517,7 @@ export default function Home() {
                 height={40}
                 className="footer-logo"
               />
-              <p className="footer-tagline">AI-powered marketing that moves faster than your competition.</p>
+              <p className="footer-tagline">{brand.tagline}</p>
             </div>
             <div className="footer-links">
               <div className="footer-link-group">
@@ -532,7 +534,7 @@ export default function Home() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Mindsheep Labs Global. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {brand.legal}. All Rights Reserved.</p>
           </div>
         </div>
       </footer>
