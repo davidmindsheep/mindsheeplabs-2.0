@@ -1151,6 +1151,44 @@ textarea.form-input {
   .footer-brand {
     max-width: 100%;
   }
+
+  /* Top branding — smaller on mobile */
+  .top-branding {
+    padding: 1.5rem 1rem 1rem;
+  }
+  .top-branding-text {
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Glass nav — compact mobile layout */
+  .glass-nav .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .glass-nav .container .flex.items-center.gap-8 {
+    gap: 1rem;
+  }
+  .nav-brand-text {
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+  }
+  .glass-nav .nav-link {
+    font-size: 0.8rem;
+  }
+  .glass-nav .btn-primary {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small screens — drop the secondary nav links */
+@media (max-width: 480px) {
+  .glass-nav .nav-link {
+    display: none;
+  }
 }
 
 /* =============================================
