@@ -1,14 +1,12 @@
 "use client";
 import Link from "next/link";
-import useBrand from "../hooks/useBrand";
 
 export default function NavBar({ activePage }) {
-  const brand = useBrand();
   return (
     <nav className="glass-nav subpage-nav">
       <div className="container flex items-center justify-between py-4">
         <Link href="/" style={{ display: "flex", alignItems: "center", height: "60px" }}>
-          <span className="nav-brand-text">{brand.name}</span>
+          <span className="nav-brand-text">mindsheep labs</span>
         </Link>
         <div className="flex items-center gap-8">
           <Link
