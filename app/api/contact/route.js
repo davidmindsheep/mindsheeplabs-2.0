@@ -7,7 +7,7 @@ function getResend() {
   return new Resend(key);
 }
 
-const BRAND = "Mindsheep Labs Australia";
+const BRAND = "Mindsheep Marketing";
 
 function esc(v = "") {
   return String(v)

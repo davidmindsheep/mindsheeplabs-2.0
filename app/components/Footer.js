@@ -10,12 +10,12 @@ export default function Footer() {
           <div className="footer-brand">
             <Image
               src="/MINDSHEEP LOGO.svg"
-              alt="Mindsheep Labs"
+              alt="Mindsheep Marketing"
               width={140}
               height={40}
               className="footer-logo"
             />
-            <p className="footer-tagline">AI-powered marketing that moves faster than your competition.</p>
+            <p className="footer-tagline">AI-powered lead generation. More leads, better leads, less time chasing them.</p>
           </div>
           <div className="footer-links">
             <div className="footer-link-group">
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Mindsheep Labs Australia. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mindsheep Marketing. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

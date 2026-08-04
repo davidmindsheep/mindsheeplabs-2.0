@@ -6,7 +6,7 @@ export default function NavBar({ activePage }) {
     <nav className="glass-nav subpage-nav">
       <div className="container flex items-center justify-between py-4">
         <Link href="/" style={{ display: "flex", alignItems: "center", height: "60px" }}>
-          <span className="nav-brand-text">mindsheep labs</span>
+          <span className="nav-brand-text">mindsheep</span>
         </Link>
         <div className="flex items-center gap-8">
           <Link

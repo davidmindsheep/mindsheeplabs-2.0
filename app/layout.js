@@ -12,8 +12,22 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Mindsheep Labs | AI-Driven Marketing",
-  description: "Combining proven marketing funnels with cutting-edge AI.",
+  metadataBase: new URL("https://mindsheep.com.au"),
+  title: {
+    default: "Mindsheep Marketing | AI Lead Generation",
+    template: "%s | Mindsheep Marketing",
+  },
+  description:
+    "Stop collecting form fills. AI that chats, qualifies and quotes instantly — so your team only gets the leads worth their time, and your ads learn to find more of them.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Mindsheep Marketing",
+    title: "Mindsheep Marketing | AI Lead Generation",
+    description:
+      "More leads. Better leads. Less time chasing them. AI lead generation done properly.",
+    url: "https://mindsheep.com.au",
+  },
 };
 
 export default function RootLayout({ children }) {

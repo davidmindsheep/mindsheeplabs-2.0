@@ -1759,3 +1759,260 @@ textarea.form-input {
     font-size: 2rem;
   }
 }
+
+/* =============================================
+   LEAD FUNNEL (Marketing homepage)
+   ============================================= */
+.funnel {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.funnel-track {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  counter-reset: funnel;
+}
+
+.funnel-stage {
+  position: relative;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.5rem;
+  transition: border-color var(--transition-normal), background var(--transition-normal);
+}
+
+.funnel-stage:hover {
+  border-color: rgba(79, 70, 229, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* The narrowing: each stage insets a little further than the last, so the
+   track visibly tapers from many clicks in to few qualified leads out. */
+@media (min-width: 900px) {
+  .funnel-track {
+    gap: 0.7rem;
+  }
+  .funnel-stage {
+    margin-left: var(--narrow);
+    margin-right: var(--narrow);
+  }
+}
+
+.funnel-stage-loop {
+  border-color: rgba(6, 182, 212, 0.4);
+  background: linear-gradient(120deg, rgba(6, 182, 212, 0.08), rgba(79, 70, 229, 0.06));
+}
+
+.funnel-stage-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.funnel-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79, 70, 229, 0.12);
+  border: 1px solid rgba(79, 70, 229, 0.25);
+  color: var(--secondary);
+}
+
+.funnel-num {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.funnel-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.funnel-body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.funnel-loop {
+  margin-top: 1.25rem;
+}
+
+.funnel-loop-arrow {
+  width: 100%;
+  height: 34px;
+  display: block;
+}
+
+.funnel-loop-label {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #94a3b8;
+  margin-top: 0.4rem;
+}
+
+/* =============================================
+   ENGAGEMENT TIERS
+   ============================================= */
+.tier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.tier-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-label {
+  display: inline-flex;
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.tier-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.tier-card p {
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+/* =============================================
+   WILLSHIP CASE STUDY MODULE
+   ============================================= */
+.case-quotes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.case-quote {
+  border-left: 2px solid var(--secondary);
+  padding: 0.4rem 0 0.4rem 1.1rem;
+  font-style: italic;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.case-quote-attr {
+  display: block;
+  font-style: normal;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.case-timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.case-step {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.case-step-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.case-step h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.case-step p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* =============================================
+   VALUE / SCORING COMPARISON
+   ============================================= */
+.score-compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.score-col {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.score-col-good {
+  border-color: rgba(6, 182, 212, 0.32);
+  background: linear-gradient(140deg, rgba(6, 182, 212, 0.07), transparent);
+}
+
+.score-col h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.score-col-good h4 {
+  color: var(--secondary);
+}
+
+.score-signal {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.score-signal:last-child {
+  border-bottom: none;
+}
+
+.score-signal-dim {
+  color: #64748b;
+}
+
+@media (min-width: 760px) {
+  .tier-grid { grid-template-columns: repeat(3, 1fr); }
+  .case-quotes { grid-template-columns: repeat(3, 1fr); }
+  .case-timeline { grid-template-columns: repeat(3, 1fr); }
+  .score-compare { grid-template-columns: repeat(2, 1fr); }
+}

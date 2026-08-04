@@ -5,7 +5,7 @@ import ContactSection from "../components/ContactSection";
 import RevealObserver from "../components/RevealObserver";
 
 export const metadata = {
-  title: "About | Mindsheep Labs",
+  title: "About | Mindsheep Marketing",
   description: "Meet the team combining 16+ years of marketing expertise with cutting-edge AI to grow your business faster.",
 };
 
@@ -125,7 +125,7 @@ export default function AboutPage() {
               <div style={{ flexShrink: 0 }}>
                 <Image
                   src="/WhatsApp Image 2025-09-22 at 10.31.29.jpeg"
-                  alt="David — Founder of Mindsheep Labs"
+                  alt="David — Founder of Mindsheep Marketing"
                   width={140}
                   height={140}
                   className="about-founder-img"
@@ -144,13 +144,13 @@ export default function AboutPage() {
                   <span className="text-gradient">Rebuilt Around AI.</span>
                 </h2>
                 <p className="text-gray-300 mb-4" style={{ lineHeight: "1.8" }}>
-                  Mindsheep Labs started with a simple frustration: why do marketing agencies and AI companies operate in completely separate worlds? David spent years deep in Google Ads, SEO, and B2B lead generation before going all-in on AI — not as a buzzword, but as the backbone of how campaigns get built, optimised, and scaled.
+                  Mindsheep Marketing started with a simple frustration: why do marketing agencies and AI companies operate in completely separate worlds? David spent years deep in Google Ads, SEO, and B2B lead generation before going all-in on AI — not as a buzzword, but as the backbone of how campaigns get built, optimised, and scaled.
                 </p>
                 <p className="text-gray-300 mb-4" style={{ lineHeight: "1.8" }}>
                   In 2024, we rebuilt the entire agency around AI. Not by bolting automation onto old processes, but by rethinking how every part of a marketing operation works — from creative generation to bid management to analytics. The result is a way of working that traditional agencies simply can't replicate.
                 </p>
                 <p className="text-gray-300" style={{ lineHeight: "1.8" }}>
-                  Today, Mindsheep Labs is a tight crew of marketing specialists and AI engineers who treat your ad spend like it&apos;s our own. We&apos;re not a 200-person agency. We move fast, build smart, and stay close to every client.
+                  Today, Mindsheep Marketing is a tight crew of marketing specialists and AI engineers who treat your ad spend like it&apos;s our own. We&apos;re not a 200-person agency. We move fast, build smart, and stay close to every client.
                 </p>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
                 className="text-sm font-semibold uppercase tracking-wide mb-4"
                 style={{ color: "var(--secondary)" }}
               >
-                Why Mindsheep Labs
+                Why Mindsheep Marketing
               </p>
               <h2 className="mb-4">
                 What Makes Us <span className="text-gradient">Different</span>

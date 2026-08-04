@@ -141,7 +141,7 @@ const services = [
 ];
 
 export const metadata = {
-  title: "Services | Mindsheep Labs",
+  title: "Services | Mindsheep Marketing",
   description: "Google Ads, SEO, B2B lead generation, AI landing pages, analytics, and custom automations — all under one roof.",
 };
 
